@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Usuario.hasOne(models.Adoptante,{foreignKey:"id_usuario"});
+      Usuario.hasOne(models.Adoptante,{foreignKey:"id_usuario",constraints:true});
     }
   }
   Usuario.init({
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     fecha_registro: DataTypes.DATE
   }, {
     sequelize,
-    modelName: 'Usuario',
+    modelName: 'Usuarios',
   });
   return Usuario;
 };
