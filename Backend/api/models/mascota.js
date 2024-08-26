@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     foto: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Mascotas',
+    modelName: 'Mascota',
   });
   return Mascota;
 };

@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     fecha_registro: DataTypes.DATE
   }, {
     sequelize,
-    modelName: 'Usuarios',
+    modelName: 'Usuario',
   });
   return Usuario;
 };
