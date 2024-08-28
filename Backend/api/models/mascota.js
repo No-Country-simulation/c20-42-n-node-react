@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   Mascota.init({
     nombre: DataTypes.STRING,
-    especie: DataTypes.STRING,
     raza: DataTypes.STRING,
     edad: DataTypes.INTEGER,
     peso: DataTypes.FLOAT,
