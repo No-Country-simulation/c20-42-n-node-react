@@ -164,7 +164,7 @@
             <tr>
               <td>Juanse Giannattasio</td>
               <td>
-                <a href="#">
+                <a href="https://github.com/Juanse2310">
                   <img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
                 </a>
               </td>
@@ -177,12 +177,12 @@
             <tr>
               <td>William Polanco</td>
               <td>
-                <a href="#">
+                <a href="https://github.com/williampolancodev">
                   <img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
                 </a>
               </td>
               <td>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/william-polanco-abbba7140/">
                   <img src="https://img.shields.io/badge/linkedin-%230A66C2.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
                 </a>
               </td>
@@ -208,12 +208,12 @@
             <tr>
               <td>Exequiel Vizuara</td>
               <td>
-                <a href="#">
+                <a href="https://github.com/ExeVizuara">
                   <img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
                 </a>
               </td>
               <td>
-                <a href="#">
+                <a href="https://linkedin.com/in/exevizuara">
                   <img src="https://img.shields.io/badge/linkedin-%230A66C2.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
                 </a>
               </td>
@@ -221,12 +221,12 @@
             <tr>
               <td>Carlos Silva</td>
               <td>
-                <a href="#">
+                <a href="https://github.com/CarlosAlecrim">
                   <img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
                 </a>
               </td>
               <td>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/carlos-silva-alecrim/">
                   <img src="https://img.shields.io/badge/linkedin-%230A66C2.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
                 </a>
               </td>
