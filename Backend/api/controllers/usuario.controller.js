@@ -2,7 +2,7 @@ const usuarioService = require('../services/usuario.service');
 
 exports.create = async (req,res)=> {
     const usuarioCreado = usuarioService.createUsuario(req.body);
-    res.status(200).json(usuarioCreado);
+    res.status(201).json(usuarioCreado);
 }
 
 exports.edit = async (req, res)=>{
