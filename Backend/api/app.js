@@ -9,6 +9,8 @@ var usuariosRouter = require('./routes/usuarios');
 var centroAdopcionRouter = require('./routes/centroadopcion');
 var authRouter = require('./routes/auth')
 
+require('./middleware/passport'); 
+
 var app = express();
 
 app.use(passport.initialize())
@@ -23,9 +25,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/usuarios', usuariosRouter);
-app.use('/centroadopcion',centroAdopcionRouter)
-app.use('/auth',authRouter)
+app.use('/api/usuarios', usuariosRouter);
+app.use('/api/centroadopcion',centroAdopcionRouter)
+app.use('/api/auth',authRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
