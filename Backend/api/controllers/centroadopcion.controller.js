@@ -2,7 +2,7 @@ const centroAdopcionService = require('../services/centroadopcion.service');
 
 exports.getAllCentroAdopcion = async(req,res)=>{
     const centrosAdopcion = await centroAdopcionService.getAllCentroAdopcion();
-    res.json(centrosAdopcion);
+    res.status(200).json(centrosAdopcion);
 }
 
 exports.createCentroAdopcion = async (req, res)=>{
