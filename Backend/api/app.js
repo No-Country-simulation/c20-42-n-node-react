@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport')
+var swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger-output.json');
+
 var indexRouter = require('./routes/index');
 var usuariosRouter = require('./routes/usuarios');
 var centroAdopcionRouter = require('./routes/centroadopcion');
@@ -13,7 +16,10 @@ require('./middleware/passport');
 
 var app = express();
 
+
 app.use(passport.initialize())
+
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerFile));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
