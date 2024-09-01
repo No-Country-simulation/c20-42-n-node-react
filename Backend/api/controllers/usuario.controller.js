@@ -1,7 +1,21 @@
+const { validationResult } = require('express-validator');
 const usuarioService = require('../services/usuario.service');
 
 exports.create = async (req,res)=> {
-    const usuarioCreado = usuarioService.createUsuario(req.body);
+
+    const errors = validationResult(req);
+
+    if(!errors.isEmpty()){
+        return res.status(400).json({errors:errors.array()});
+    }
+    const{nombre, correo_electronico,contrasena,rol} = req.body
+    data = {
+        nombre: nombre,
+        correo_electronico:correo_electronico,
+        contrasena:contrasena,
+        rol:rol,
+    }
+    const usuarioCreado = usuarioService.createUsuario(data);
     res.status(201).json(usuarioCreado);
 }
 
