@@ -1,0 +1,65 @@
+form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.container span {
+    color: white;
+    text-align: center;
+}
+.container div {
+    width: 430px;
+}
+
+.container input {
+    border: 1px solid #525252;
+    width: 430px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.container label {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+.checkbox {
+    width: 430px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.checkbox a {
+    color: white;
+    font-weight: bold;
+}
+
+.checkbox input{
+    margin-right: 5px;
+}
+.text-checkbox {
+    font-size: 14px;
+}
+form button {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+form p {
+    font-size: 18px;
+    color: white;
+}
+input:checked::after {
+    content: '✔'; /* Símbolo de check */
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+  }
+
+  .p-check {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
