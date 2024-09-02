@@ -1,0 +1,12 @@
+.right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-section span, p {
+    color: #73114B;
+}
+.paw {
+    width: 420px;
+}
