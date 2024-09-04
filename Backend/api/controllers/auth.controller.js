@@ -6,6 +6,7 @@ const usuarioService = require('../services/usuario.service');
 
 
 exports.login = async (req,res)=>{
+    // #swagger.tags = ['Auth']
     const {correo_electronico, contrasena} = req.body;
     try {
         const usuario = await usuarioService.getUsuarioEmail(correo_electronico);

@@ -2,7 +2,7 @@ const { validationResult } = require('express-validator');
 const usuarioService = require('../services/usuario.service');
 
 exports.create = async (req,res)=> {
-
+    // #swagger.tags = ['Usuario']
     const errors = validationResult(req);
 
     if(!errors.isEmpty()){
@@ -20,17 +20,21 @@ exports.create = async (req,res)=> {
 }
 
 exports.edit = async (req, res)=>{
+    // #swagger.tags = ['Usuario']
     res.status(200).json({message:'usuario editado'})
 }
 
 exports.list = async (req, res)=>{
+    // #swagger.tags = ['Usuario']
     res.status(200).json({message: 'lista de usuarios'})
 }
 
 exports.delete = async (req, res)=>{
+    // #swagger.tags = ['Usuario']
     res.status(200).json({message: 'usuario deletado'})
 }
 
 exports.protected = async (req, res)=>{
+    // #swagger.tags = ['Usuario']
     res.status(200).json({message: 'resource protected'})
 }
