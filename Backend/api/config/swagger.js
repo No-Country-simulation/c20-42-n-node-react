@@ -13,7 +13,6 @@ const doc = {
 
 const outputFile = '../swagger-output.json';
 const endpointsFiles = [
-    '../routes/centroadopcion.js',
     '../app.js'
 ]
 
