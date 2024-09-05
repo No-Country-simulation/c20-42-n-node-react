@@ -10,7 +10,10 @@ const swaggerFile = require('./swagger-output.json');
 var indexRouter = require('./routes/index');
 var usuariosRouter = require('./routes/usuarios');
 var centroAdopcionRouter = require('./routes/centroadopcion');
-var authRouter = require('./routes/auth')
+var authRouter = require('./routes/auth');
+var mascotasRouter = require('./routes/mascotas');
+var adoptanteRouter = require('./routes/adoptantes')
+
 
 require('./middleware/passport'); 
 
@@ -30,10 +33,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+
 app.use('/api/usuarios', usuariosRouter);
 app.use('/api/centro-adopcion',centroAdopcionRouter)
 app.use('/api/auth',authRouter)
+app.use('/api/mascotas',mascotasRouter);
+app.use('/api/adoptantes',adoptanteRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
