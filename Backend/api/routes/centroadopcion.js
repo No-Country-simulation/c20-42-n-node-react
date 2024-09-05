@@ -12,7 +12,7 @@ router.post('/', passport.authenticate('jwt',{session:false}),[
     check('nombre_centro').notEmpty().withMessage('Nombre es obrigatorio'),
     check('direccion').notEmpty().withMessage('Direccion es obrigatorio'),
     check('telefono').notEmpty().withMessage('Telefono es obrigatorio'),
-    check('horario_atencion').notEmpty().withMessage('El rol es obligatorio')
+    check('horario_atencion').notEmpty().withMessage('Horario es obligatorio')
 
 ], centroAdopcionController.create);
 
