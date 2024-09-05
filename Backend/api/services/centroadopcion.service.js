@@ -19,7 +19,6 @@ exports.getById = async (id)=>{
 }
 
 exports.update = async (id, dataCentroAdopcion)=>{
-    console.info("service",dataCentroAdopcion);
     return await CentroAdopcion.update(dataCentroAdopcion,{where:{id:id}})
 }
 
