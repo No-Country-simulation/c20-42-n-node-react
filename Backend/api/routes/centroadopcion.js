@@ -2,7 +2,7 @@ var express = require('express');
 const centroAdopcionController = require('../controllers/centroadopcion.controller');
 var router = express.Router();
 const passport = require('passport');
-const {check, valitaionResult} = require('express-validator');
+const {check} = require('express-validator');
 
 router.get('',passport.authenticate('jwt',{session:false}), centroAdopcionController.getAll);
 
