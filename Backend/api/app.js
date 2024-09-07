@@ -13,6 +13,7 @@ var centroAdopcionRouter = require('./routes/centroadopcion');
 var authRouter = require('./routes/auth');
 var mascotasRouter = require('./routes/mascotas');
 var adoptanteRouter = require('./routes/adoptantes')
+var adopcionRouter = require('./routes/adopcion');
 
 
 require('./middleware/passport'); 
@@ -39,7 +40,7 @@ app.use('/api/centro-adopcion',centroAdopcionRouter)
 app.use('/api/auth',authRouter)
 app.use('/api/mascotas',mascotasRouter);
 app.use('/api/adoptantes',adoptanteRouter);
-
+app.use('/api/adoption', adopcionRouter);
 
 
 // catch 404 and forward to error handler

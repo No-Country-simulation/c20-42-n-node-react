@@ -374,6 +374,72 @@
           }
         }
       }
+    },
+    "/api/adoption/pedido": {
+      "post": {
+        "tags": [
+          "Adopcion"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id_adoptante": {
+                    "example": "any"
+                  },
+                  "id_mascota": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/adoption/aprobar": {
+      "post": {
+        "tags": [
+          "Adopcion"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id_adopcion": {
+                    "example": "any"
+                  },
+                  "id_usuario": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
