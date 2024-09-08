@@ -7,9 +7,9 @@ const usuarioService = require('../services/usuario.service');
 
 exports.login = async (req,res)=>{
     // #swagger.tags = ['Auth']
-    const {correo_electronico, contrasena} = req.body;
+    const {email, password} = req.body;
     try {
-        const usuario = await usuarioService.getUsuarioEmail(correo_electronico);
+        const usuario = await usuarioService.getUsuarioEmail(email);
         if(!usuario){
             return res.status(404).json({
                 success:false,
@@ -17,7 +17,7 @@ exports.login = async (req,res)=>{
             });
         }
         
-        const isMath = await bcrypt.compare(contrasena,usuario.contrasena);
+        const isMath = await bcrypt.compare(password,usuario.contrasena);
         if(!isMath){
             return res.status(401).json({
                 success:false,
