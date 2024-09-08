@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const cors = require('cors');
 var logger = require('morgan');
 var passport = require('passport')
 var swaggerUi = require('swagger-ui-express');
@@ -20,7 +21,11 @@ require('./middleware/passport');
 
 var app = express();
 
-
+app.use(cors({
+  origin:'*',
+  methods:'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials:false
+}));
 app.use(passport.initialize())
 
 app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerFile));
