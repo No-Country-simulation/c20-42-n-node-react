@@ -8,12 +8,12 @@ exports.create = async (req,res)=> {
     if(!errors.isEmpty()){
         return res.status(400).json({errors:errors.array()});
     }
-    const{nombre, correo_electronico,contrasena,rol} = req.body
+    const{nombre, correo_electronico,contrasena} = req.body
     data = {
         nombre: nombre,
         correo_electronico:correo_electronico,
         contrasena:contrasena,
-        rol:rol,
+        rol:'USER',
     }
     const usuarioCreado = usuarioService.createUsuario(data);
     res.status(201).json(usuarioCreado);
