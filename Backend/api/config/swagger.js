@@ -1,4 +1,6 @@
 const swaggerAutogen = require('swagger-autogen')({openapi:'3.0.0'});
+require('dotenv').config(); 
+
 
 const doc = {
     info:{
@@ -17,7 +19,7 @@ const doc = {
     security: [{
         bearerAuth: []
     }],
-    host:'localhost:3000',
+    host:process.env.API_HOST,
     schemes:['http','https'],
     consumes: ['application/json'],
     produces: ['application/json']
