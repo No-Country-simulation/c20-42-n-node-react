@@ -42,9 +42,6 @@
                   },
                   "contrasena": {
                     "example": "any"
-                  },
-                  "rol": {
-                    "example": "any"
                   }
                 }
               }
@@ -62,6 +59,53 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/centro-adopcion/": {
+      "get": {
+        "tags": [
+          "Centro Adopcion"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Centro Adopcion"
+        ],
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nombre_centro": {
+                    "example": "any"
+                  },
+                  "direccion": {
+                    "example": "any"
+                  },
+                  "telefono": {
+                    "example": "any"
+                  },
+                  "horario_atencion": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -139,19 +183,6 @@
         }
       }
     },
-    "/api/centro-adopcion/": {
-      "post": {
-        "tags": [
-          "Centro Adopcion"
-        ],
-        "description": "",
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        }
-      }
-    },
     "/api/auth/login": {
       "post": {
         "tags": [
@@ -178,10 +209,10 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "correo_electronico": {
+                  "email": {
                     "example": "any"
                   },
-                  "contrasena": {
+                  "password": {
                     "example": "any"
                   }
                 }

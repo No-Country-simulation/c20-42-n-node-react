@@ -4,7 +4,7 @@ var router = express.Router();
 const passport = require('passport');
 const {check} = require('express-validator');
 
-router.get('',passport.authenticate('jwt',{session:false}), centroAdopcionController.getAll);
+router.get('/',passport.authenticate('jwt',{session:false}), centroAdopcionController.getAll);
 
 router.get('/:id',passport.authenticate('jwt',{session:false}), centroAdopcionController.getById);
 

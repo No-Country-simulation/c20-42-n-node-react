@@ -2,13 +2,21 @@ const centroAdopcionService = require('../services/centroadopcion.service');
 
 exports.getAll = async(req,res)=>{
     // #swagger.tags = ['Centro Adopcion']
-    const centrosAdopcion = await centroAdopcionService.getAllCentroAdopcion();
+    const centrosAdopcion = await centroAdopcionService.getAll();
     res.status(200).json(centrosAdopcion);
 }
 
 exports.create = async (req, res)=>{
     // #swagger.tags = ['Centro Adopcion']
-    const centroAdopcion = await centroAdopcionService.create(req.body);
+    const data ={}
+    const {nombre_centro, direccion, telefono, horario_atencion } = req.body;
+ 
+    data.nombre_centro = nombre_centro;
+    data.direccion = direccion;
+    data.telefono =  telefono;
+    data.horario_atencion = horario_atencion;
+
+    const centroAdopcion = await centroAdopcionService.create(data);
     res.status(201).json(centroAdopcion);
 }
 
