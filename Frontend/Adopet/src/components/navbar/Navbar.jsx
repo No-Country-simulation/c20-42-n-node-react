@@ -24,19 +24,18 @@ const Navbar =()=>{
 	      <div className="collapse navbar-collapse" data-target="#ftco-nav" >
 	        <ul className="navbar-nav ml-auto">
 			<li className="nav-item active"><a href="/" className="nav-link">Home</a></li>
-			<li className="nav-item"><a href="/" className="nav-link">About</a></li>
-			<li className="nav-item"><a href="/" className="nav-link">Contacto</a></li>
+
 			{ user && <>	{user.role==='USER' ?(
 					<>  
 						<li className="nav-item"><a href="/mascotas" className="nav-link">Mascotas</a></li>
-						<li className="nav-item" onClick={logout}><a href="/" className="nav-link">Logout</a></li>
+						
 						
 					</>
 				):
 				(					
 					user.role === 'ADMIN'?(<>
 						<li className="nav-item"><a href="/centro-adopcion" className="nav-link">Centros de Adopcion</a></li>
-						<li className="nav-item" onClick={logout}><a href="/" className="nav-link">Logout</a></li>
+
 						</>
 					):(
 						<></>
@@ -46,8 +45,15 @@ const Navbar =()=>{
 
 				</>
 			}
-			{!user&&
+			<li className="nav-item"><a href="/" className="nav-link">About</a></li>
+			<li className="nav-item"><a href="/" className="nav-link">Contacto</a></li>
+
+			{!user?(
 				<li className="nav-item"><a href="/login" className="nav-link">Login</a></li>
+			):(
+				<li className="nav-item" onClick={logout}><a href="/" className="nav-link">Logout</a></li>
+			)
+				
 
 			}
 	        </ul>
