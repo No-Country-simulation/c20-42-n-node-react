@@ -1,47 +1,42 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import DashboardPage from "./pages/DashboardPage/DashboardPage";
+import IsAuthenticated from "./guards/guards";
 import Navbar from './components/navbar/Navbar';
-import Banner from "./components/navbar/Banner";
+import MascotaPage from "./pages/Mascota/MascotaPage";
+import CentroPage from "./pages/CentroAdopcion/CentroPage";
+import FormCentroAdopcion from "./components/CentroAdopcion/FormCentroAdopcion";
+import ListCentroAdopion from "./components/CentroAdopcion/ListCentroAdopcion";
+import ShowCentroAdopcion from "./components/CentroAdopcion/ShowCentroAdopcion";
+import { AuthProvider } from "./context/AuthContext";
+import PrivateRoute from "./utils/PrivateRoute";
 
 
 function App() {
-
-
+  
+  
   return (
-    <>
-     <Navbar/>
-    <Banner/>
-   
-      <div class="main">
-        <div className="container-fluid">
-          <div className="row">
-          <div class="col-md-6 col-sm-12 section1-login">
-            <h2> Login</h2>
-            <p>Login or register from here to access.</p>
-         </div>
-         <div class="col-md-6 col-sm-12" >
-            <div class="login-form">
-               <form>
-                  <div class="form-group">
-                     <label>User Name</label>
-                     <input type="text" class="form-control" placeholder="User Name"/>
-                  </div>
-                  <div class="form-group">
-                     <label>Password</label>
-                     <input type="password" class="form-control" placeholder="Password"/>
-                  </div>
-                  <button type="submit" class="btn btn-black">Login</button>
-                  <button type="submit" class="btn btn-secondary">Register</button>
-               </form>
-            </div>
-         </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </>
+   <AuthProvider> 
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route  element={<PrivateRoute/>} > 
+          <Route path="/dashboard" element={<DashboardPage/>} />
+          <Route path="/mascotas" element={<MascotaPage/>} />
+          <Route path="/centro-adopcion" element={<CentroPage/>} >
+            <Route path="create" element={<FormCentroAdopcion/>} />
+            <Route path="" element={<ListCentroAdopion/>} />
+            <Route path=":id" element={<ShowCentroAdopcion/>}/>
+          </Route>
+        </Route>
+      </Routes>
+    </Router>
+    </AuthProvider>
   )
 }
 
