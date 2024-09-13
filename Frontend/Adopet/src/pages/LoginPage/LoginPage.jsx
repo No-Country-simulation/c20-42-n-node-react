@@ -18,9 +18,7 @@ const LoginPage = ()=>{
 	const user = JSON.parse(currentUser);
 	const navigate = useNavigate();
 
-	useEffect(()=>{
-   
-	},[redirect]);
+	
    const handleSubmit = (event)=>{
       event.preventDefault();
       setRedirect( authService.login({
