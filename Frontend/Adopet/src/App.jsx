@@ -13,6 +13,9 @@ import ListCentroAdopion from "./components/CentroAdopcion/ListCentroAdopcion";
 import ShowCentroAdopcion from "./components/CentroAdopcion/ShowCentroAdopcion";
 import { AuthProvider } from "./context/AuthContext";
 import PrivateRoute from "./utils/PrivateRoute";
+import FormMascota from "./components/Mascota/FormMascota";
+import ListMascota from "./components/Mascota/ListMascota";
+import ShowMascota from "./components/Mascota/ShowMascota";
 
 
 function App() {
@@ -27,7 +30,11 @@ function App() {
         <Route path="/login" element={<LoginPage/>} />
         <Route  element={<PrivateRoute/>} > 
           <Route path="/dashboard" element={<DashboardPage/>} />
-          <Route path="/mascotas" element={<MascotaPage/>} />
+          <Route path="/mascotas" element={<MascotaPage/>} >
+          <Route path="create" element={<FormMascota/>} />
+            <Route path="" element={<ListMascota/>} />
+            <Route path=":id" element={<ShowMascota/>}/>
+          </Route>
           <Route path="/centro-adopcion" element={<CentroPage/>} >
             <Route path="create" element={<FormCentroAdopcion/>} />
             <Route path="" element={<ListCentroAdopion/>} />
