@@ -1,8 +1,16 @@
 import {api} from './api';
 
 export const addMascota = async(data)=>{
+
     try {
-        const response = await api.post('/api/mascotas/',data);
+        const token = sessionStorage.getItem('token');
+        const response = await api.post('/api/mascotas/',data,{
+            headers:{
+                Authorization: `Bearer ${token}`,
+                ContentType:'multipart/form-data'
+            }
+        });
+
         return response.data;
     } catch (error) {
         throw error;
@@ -10,8 +18,14 @@ export const addMascota = async(data)=>{
 }
 
 export const getAllMascotas = async()=>{
+    
     try {
-        const response = await api.get('/api/mascotas/');
+        const token = sessionStorage.getItem('token');
+        const response = await api.get('/api/mascotas/',{
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
         return response.data;
     } catch (error) {
         throw error;
@@ -20,8 +34,13 @@ export const getAllMascotas = async()=>{
 
 
 export const getMascota = async(id)=>{
-    try {
-        const response = await api.get('/api/mascotas/${id}');
+    const token = sessionStorage.getItem('token');
+    try { 
+        const response = await api.get(`/api/mascotas/${id}`,{
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
         return response.data;
     } catch (error) {
         throw error;
@@ -30,7 +49,12 @@ export const getMascota = async(id)=>{
 
 export const updateMascota = async(id,data)=>{
     try {
-        const response = await api.put('/api/mascotas/${id}',data);
+        const token = sessionStorage.getItem('token');
+        const response = await api.put('/api/mascotas/${id}',data,{
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        });
         return response.data;
     } catch (error) {
         throw error;
