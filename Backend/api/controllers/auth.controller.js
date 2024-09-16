@@ -25,7 +25,7 @@ exports.login = async (req,res)=>{
             });
         }
 
-        const token = jwt.sign({id:usuario.id },conf.jwtSecret,{expiresIn:'1h'});
+        const token = jwt.sign({id:usuario.id,role:usuario.rol },conf.jwtSecret,{expiresIn:'1h'});
         res.json({token:token});
 
     } catch (error) {
