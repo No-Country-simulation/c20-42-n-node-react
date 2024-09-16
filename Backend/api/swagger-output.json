@@ -72,6 +72,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         }
       },
@@ -83,6 +86,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         },
         "requestBody": {
@@ -130,6 +136,9 @@
           "200": {
             "description": "OK"
           },
+          "403": {
+            "description": "Forbidden"
+          },
           "404": {
             "description": "Not Found"
           }
@@ -153,6 +162,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
           },
           "500": {
             "description": "Internal Server Error"
@@ -222,6 +234,71 @@
         }
       }
     },
+    "/api/mascotas/": {
+      "get": {
+        "tags": [
+          "Mascota"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Mascota"
+        ],
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nombre": {
+                    "example": "any"
+                  },
+                  "raza": {
+                    "example": "any"
+                  },
+                  "edad": {
+                    "example": "any"
+                  },
+                  "peso": {
+                    "example": "any"
+                  },
+                  "sexo": {
+                    "example": "any"
+                  },
+                  "estado_salud": {
+                    "example": "any"
+                  },
+                  "vacuna": {
+                    "example": "any"
+                  },
+                  "esterelizada": {
+                    "example": "any"
+                  },
+                  "descripcion": {
+                    "example": "any"
+                  },
+                  "foto": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/mascotas/{id}": {
       "get": {
         "tags": [
@@ -266,6 +343,9 @@
           "200": {
             "description": "OK"
           },
+          "403": {
+            "description": "Forbidden"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -306,19 +386,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/api/mascotas/": {
-      "post": {
-        "tags": [
-          "Mascota"
-        ],
-        "description": "",
-        "responses": {
-          "201": {
-            "description": "Created"
           }
         }
       }

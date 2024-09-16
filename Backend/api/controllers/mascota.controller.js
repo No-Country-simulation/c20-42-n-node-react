@@ -8,8 +8,29 @@ exports.getAll = async (req,res)=>{
 
 exports.create = async (req, res)=>{
     // #swagger.tags = ['Mascota']
-    const createdMascota = await mascotaService.create(req.body);
-    res.status(201).json(createdMascota);
+    const msg={
+        success:false,
+        message:'No registrado!'
+    }
+    const data = {}
+    const {nombre, raza, edad,peso, sexo,estado_salud,vacuna,esterelizada,descripcion,foto} = req.body;
+    data.nombre = nombre;
+    data.raza = raza;
+    data.edad = edad;
+    data.peso = peso;
+    data.sexo = sexo;
+    data.estado_salud = estado_salud;
+    data.vacunada = vacuna;
+    data.esterilizada = esterelizada;
+    data.descripcion = descripcion
+    data.foto = req.file? req.file.filename:null;
+
+    const createdMascota = await mascotaService.create(data);
+    if (createdMascota){
+        msg.success = true;
+        msg.message = 'Registro efectivado!' 
+    }
+    res.status(201).json(msg);
 }
 
 exports.getById = async (req, res)=>{
