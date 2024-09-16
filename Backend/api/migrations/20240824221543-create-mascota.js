@@ -12,9 +12,6 @@ module.exports = {
       nombre: {
         type: Sequelize.STRING
       },
-      especie: {
-        type: Sequelize.STRING
-      },
       raza: {
         type: Sequelize.STRING
       },
