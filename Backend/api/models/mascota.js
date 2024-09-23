@@ -11,13 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Mascota.hasMany(models.Adopcion,{foreignKey:"id_mascota"});
-      Mascota.belongsToMany(models.CentroAdoption,{through:models.MascotaCentro,foreignKey:"id_mascota"});
+      Mascota.hasMany(models.Adopcion,{foreignKey:"id_mascota",constraints:true});
+      Mascota.belongsToMany(models.CentroAdopcion,{through:models.MascotaCentro,foreignKey:"id_mascota", constraints:true});
     }
   }
   Mascota.init({
     nombre: DataTypes.STRING,
-    especie: DataTypes.STRING,
     raza: DataTypes.STRING,
     edad: DataTypes.INTEGER,
     peso: DataTypes.FLOAT,
@@ -30,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Mascota',
+    freezeTableName:true
   });
   return Mascota;
 };

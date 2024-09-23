@@ -1,34 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import DashboardPage from "./pages/DashboardPage/DashboardPage";
+import IsAuthenticated from "./guards/guards";
+import Navbar from './components/navbar/Navbar';
+import MascotaPage from "./pages/Mascota/MascotaPage";
+import CentroPage from "./pages/CentroAdopcion/CentroPage";
+import FormCentroAdopcion from "./components/CentroAdopcion/FormCentroAdopcion";
+import ListCentroAdopion from "./components/CentroAdopcion/ListCentroAdopcion";
+import ShowCentroAdopcion from "./components/CentroAdopcion/ShowCentroAdopcion";
+import { AuthProvider } from "./context/AuthContext";
+import PrivateRoute from "./utils/PrivateRoute";
+import FormMascota from "./components/Mascota/FormMascota";
+import ListMascota from "./components/Mascota/ListMascota";
+import ShowMascota from "./components/Mascota/ShowMascota";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
+  
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+   <AuthProvider> 
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route  element={<PrivateRoute/>} > 
+          <Route path="/dashboard" element={<DashboardPage/>} />
+          <Route path="/mascotas" element={<MascotaPage/>} >
+          <Route path="create" element={<FormMascota/>} />
+            <Route path="" element={<ListMascota/>} />
+            <Route path=":id" element={<ShowMascota/>}/>
+          </Route>
+          <Route path="/centro-adopcion" element={<CentroPage/>} >
+            <Route path="create" element={<FormCentroAdopcion/>} />
+            <Route path="" element={<ListCentroAdopion/>} />
+            <Route path=":id" element={<ShowCentroAdopcion/>}/>
+          </Route>
+        </Route>
+      </Routes>
+    </Router>
+    </AuthProvider>
   )
 }
 
