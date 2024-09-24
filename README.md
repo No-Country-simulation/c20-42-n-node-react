@@ -30,10 +30,10 @@
 
 <dl>
   <dd>
-    ✅ 
+    ✅ Búsqueda y Filtros Avanzados
   </dd>
   <dd>
-    ✅ 
+    ✅ Perfiles Detallados de Mascotas
   </dd>
 </dl>
 <br>
@@ -42,43 +42,15 @@
 
 <dl>
   <dd>
-    <h3>📋 </h3>
     <dl>
       <dd>
-        <p>✅ </p>
+        <p>✅ Búsqueda Inteligente de Mascotas </p>
       </dd>
       <dd>
-        <p>✅ </p>
+        <p>✅ Registro y gestión de mascotas en adopción </p>
       </dd>
       <dd>
-        <p>✅ </p>
-      </dd>
-    </dl>
-  </dd>
-</dl>
-<br>
-
-<dl>
-  <dd>
-    <h3>📈 </h3>
-    <dl>
-      <dd>
-        <p>✅ </p>
-      </dd>
-    </dl>
-  </dd>
-</dl>
-<br>
-
-<dl>
-  <dd>
-    <h3>👌 Recomendaciones</h3>
-    <dl>
-      <dd>
-        <p>✅ </p>
-      </dd>
-      <dd>
-        <p>✅ </p>
+        <p>✅ Seguridad y gestión de la plataforma</p>
       </dd>
     </dl>
   </dd>
@@ -162,19 +134,6 @@
           </thead>
           <tbody>
             <tr>
-              <td>Juanse Giannattasio</td>
-              <td>
-                <a href="https://github.com/Juanse2310">
-                  <img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
-                </a>
-              </td>
-              <td>
-                <a href="#">
-                  <img src="https://img.shields.io/badge/linkedin-%230A66C2.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
-                </a>
-              </td>
-            </tr>
-            <tr>
               <td>William Polanco</td>
               <td>
                 <a href="https://github.com/williampolancodev">
@@ -205,19 +164,6 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Exequiel Vizuara</td>
-              <td>
-                <a href="https://github.com/ExeVizuara">
-                  <img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
-                </a>
-              </td>
-              <td>
-                <a href="https://linkedin.com/in/exevizuara">
-                  <img src="https://img.shields.io/badge/linkedin-%230A66C2.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
-                </a>
-              </td>
-            </tr>
             <tr>
               <td>Carlos Silva</td>
               <td>
