@@ -185,3 +185,31 @@
 
 ## Comandos
 
+
+- Backend
+
+git clone https://github.com/No-Country-simulation/c20-42-n-node-react
+
+
+cd c20-42-n-node-react/Backend/api/
+
+npm i
+
+Renombrar el archivo env-example para .env y modificar si necesario las informaciones relacionados a su base de datos.
+
+Crea su base de datos manualmente de acordo com los datos informados en el archivo .env
+
+Aplicar las migraciones con este comando: npx sequelize-cli db:migrate 
+
+npm start
+
+
+- FrontEnd
+
+cd c20-42-n-node-react/Frontend/Adopet
+
+npm i 
+
+Renombrar el archivo env-example para .env y agregar a variavel de entorno VITE_BACKEND_URL com la url de backend configurada anteriormente, por ejemplo http://localhost:3000.
+
+npm run dev
